@@ -43,8 +43,8 @@ export const toRna = toDna => {
     A: 'U'
   }
 
-  return toDna.replace(/[GCTA]/gi, function (transcribe) {
-    return dnaToRna[transcribe]
+  return toDna.replace(/[GCTA]/gi, function (element) {
+    return dnaToRna[element]
   })
 }
 
