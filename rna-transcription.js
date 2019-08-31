@@ -7,13 +7,7 @@ export const toRna = toDna => {
     A: 'U'
   }
 
-  const toDnaArr = toDna.toUpperCase().split('')
-
-  const transcribe = toDnaArr.map(element => {
-    return dnaToRna[element]
+  return toDna.replace(/[GCTA]/gi, function (transcribe) {
+    return dnaToRna[transcribe]
   })
-
-  const transcription = transcribe.join('')
-
-  return transcription
 }
