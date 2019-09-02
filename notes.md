@@ -34,8 +34,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 I came up with this:
 `````javascript
 
-export const toRna = toDna => {
-
   const dnaToRna = {
     G: 'C',
     C: 'G',
@@ -43,14 +41,19 @@ export const toRna = toDna => {
     A: 'U'
   }
 
+export const toRna = toDna => {
+
   return toDna.replace(/[GCTA]/gi, function (element) {
     return dnaToRna[element]
   })
+
 }
 
 `````
 
 Breakdown:
+* declare the variable dnaToRna in the global scope and not in the function toRNA
+  * this prevents the variable dnaToRna from being redefined every time we call the function
 * toDna.replace() | returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
 * /[GCTA]/gi | this is the regex. "g" global match (find all matches rather than stopping on the first match). "i" ignore case
 * the function takes in the RegExp and matches it to the dnaToRna object
