@@ -7,8 +7,6 @@ const dnaToRna = {
 
 export const toRna = toDna => {
 
-  return toDna.replace(/[GCTA]/gi, function (element) {
-    return dnaToRna[element]
-  })
+  return toDna.replace(/[GCTA]/gi, element => dnaToRna[element])
 
 }
